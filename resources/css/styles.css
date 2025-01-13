@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-section {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .left-section .logo img {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    color: #1f2937;
+  }
+  
+  p {
+    color: #6b7280;
+    margin-bottom: 20px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4b5563;
+    font-weight: bold;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  small.error {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: none;
+  }
+  /* Estilo para mostrar los mensajes de error */
+.errors {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb; 
+  border-radius: 5px;
+}
+.lorem {
+  color: #000000;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.pInicial{
+  color: #000000;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.error-message {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .actions a {
+    color: #0b43dd;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .btn {
+    background-color: #0b37af;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0b43dd;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #6b7280;
+  }
+  
+  .login-link a {
+    color: #10b981;
+    text-decoration: none;
+  }
+  
+  .right-section {
+    width: 50%;
+    background: linear-gradient(135deg, #1f2937, #082574);
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .right-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+/* Estilos del login se mantienen */
+
+.main-container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo del menú lateral */
+  .sidebar {
+    width: 250px;
+    background-color: #082574;
+    color: white;
+    padding: 20px;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #0b43dd;
+  }
+  
+  /* Estilo del contenido principal */
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .section {
+    display: none;
+  }
+  
+  .section.active {
+    display: block;
+  }
+  .logo {
+    width: 150px;  
+    height: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+  display: flex;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo del menú lateral */
+.sidebar {
+  width: 250px;
+  background-color: #1f2937; /* Color de fondo azul más oscuro */
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff; /* Texto blanco */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #0b43dd; /* Color de hover */
+}
+
+/* Estilo del contenido principal */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+/* Agrega un gradiente al menú lateral para mayor elegancia */
+.sidebar {
+  background: linear-gradient(to bottom, #1f2937, #082574); /* Gradiente azul */
+}
+
+/* Agrega una sombra suave al menú lateral */
+.sidebar {
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Agrega un borde a la sección de contenido */
+.content {
+  border-left: 1px solid #ddd;
+}
