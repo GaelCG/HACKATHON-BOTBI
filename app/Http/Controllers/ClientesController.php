@@ -44,7 +44,7 @@ class ClientesController extends Controller
         $direccionCompleta = "{$request->direccion}, {$request->ciudad}, {$request->estado}, {$request->pais}, {$request->codigo_postal}";
 
         // API para convertir la dirección a coordenadas (usando OpenCage Geocoder como ejemplo)
-        $apiKey = 'e750335c20904b06b3f3900ff3f9c031'; 
+        $apiKey = env('API_KEY');
         $response = Http::get("https://api.opencagedata.com/geocode/v1/json", [
             'q' => $direccionCompleta,
             'key' => $apiKey,

@@ -34,11 +34,14 @@
 
                 <button type="submit" class="btn">Log In</button>
             </form>
+
+            <div class="login-link">
+                <p>¿No tienes cuenta? <a href="{{ route('register-form') }}">Crea una aquí</a></p>
+            </div>
         </div>
         <div class="right-section">
-            <h2>Ingresa y revoluciona tu negocio, entra en botbi</h2>
+            <h2>Ingresa y revoluciona tu negocio, entra en Botbi</h2>
         </div>
     </div>
 </body>
 </html>
-

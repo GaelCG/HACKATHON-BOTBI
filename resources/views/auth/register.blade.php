@@ -1,77 +1,54 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Botbi</title>
+    @vite(['resources/css/styles.css'])
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">
+                <img src="{{ asset('images/botbi.png') }}" alt="Botbi Logo">
+            </div>
+            <h1>¡Regístrate!</h1>
+            <p>Crea una cuenta para comenzar a usar Botbi.</p>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            <!-- Mostrar errores -->
+            @if($errors->any())
+                <div class="errors">
+                    @foreach($errors->all() as $error)
+                        <p class="error-message">{{ $error }}</p>
+                    @endforeach
                 </div>
+            @endif
+
+            <form method="POST" action="{{ route('process-register') }}" class="login-form">
+                @csrf
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" placeholder="Tu nombre completo" value="{{ old('name') }}" required>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="example@domain.com" value="{{ old('email') }}" required>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Crea una contraseña" required>
+
+                <label for="password_confirmation">Confirmar Password</label>
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Repite tu contraseña" required>
+                
+
+                <button type="submit" class="btn">Registrarse</button>
+            </form>
+
+            <div class="login-link">
+                <p>¿Ya tienes una cuenta? <a href="{{ route('login-form') }}">Inicia sesión aquí</a></p>
             </div>
         </div>
+        <div class="right-section">
+            <h2>Únete a Botbi y transforma tu negocio</h2>
+        </div>
     </div>
-</div>
-@endsection
+</body>
+</html>
