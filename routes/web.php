@@ -22,7 +22,19 @@ Route::post('clientes', [ClientesController::class, 'store'])->name('clientes.st
 // Ruta de login
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'processLogin'])->name('process-login');
+// Ruta para mostrar el formulario de login
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login-form');
+
+// Ruta para procesar el formulario de login
+Route::post('/login', [AuthController::class, 'processLogin'])->name('process-login');
+
+// Ruta para mostrar el formulario de registro
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register-form');
+
+// Ruta para procesar el formulario de registro
+Route::post('/register', [AuthController::class, 'processRegister'])->name('process-register');
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register-form');
+Route::post('/register', [AuthController::class, 'processRegister'])->name('process-register');
 
 // Ruta de Home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
